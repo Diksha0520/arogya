@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aarogyashree — PCOD/PCOS Care Platform</title>
@@ -386,10 +387,303 @@ footer p+p{margin-top:.45rem;font-size:.78rem;opacity:.5}
     <div class="auth-area" id="authButtons">
       <button class="btn btn-o" onclick="openM('loginModal')">Login</button>
       <button class="btn btn-p" onclick="openM('registerModal')">Sign Up</button>
+=======
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aarogyashree - PCOD/PCOS Care</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; }
+        header { background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%); color: white; padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 20px rgba(0,0,0,0.2); }
+        nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.8rem; font-weight: bold; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: white; text-decoration: none; padding: 0.5rem 1rem; border-radius: 20px; transition: all 0.3s; }
+        .nav-links a:hover { background: rgba(255,255,255,0.2); }
+        .auth-btns { display: flex; gap: 0.5rem; }
+        .user-menu { display: none; align-items: center; gap: 1rem; }
+        .user-menu.active { display: flex; }
+        .user-avatar { width: 40px; height: 40px; border-radius: 50%; background: white; color: #ff6b9d; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+        .hero { background: linear-gradient(135deg, #ffb3d9 0%, #ff6b9d 100%); color: white; padding: 6rem 2rem; text-align: center; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.95; }
+        .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn { padding: 1rem 2.5rem; border: none; border-radius: 50px; font-size: 1.1rem; cursor: pointer; transition: all 0.3s; }
+        .btn-primary { background: white; color: #ff6b9d; font-weight: bold; }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+        .btn-secondary { background: transparent; color: white; border: 2px solid white; }
+        .btn-secondary:hover { background: white; color: #ff6b9d; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 5rem 2rem; }
+        .section-title { text-align: center; font-size: 2.8rem; margin-bottom: 1rem; color: #c44569; }
+        .section-subtitle { text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 3rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .card { background: white; padding: 2.5rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(255,107,157,0.15); transition: all 0.3s; text-align: center; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(255,107,157,0.25); }
+        .card-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .card h3 { color: #ff6b9d; margin-bottom: 1rem; font-size: 1.5rem; }
+        .stats { background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%); color: white; padding: 4rem 2rem; text-align: center; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; max-width: 1200px; margin: 0 auto; }
+        .stat-item h3 { font-size: 3rem; margin-bottom: 0.5rem; }
+        .symptoms { background: #fff5f8; }
+        .symptom-card { background: white; padding: 2rem; border-radius: 15px; border-left: 5px solid #ff6b9d; transition: all 0.3s; }
+        .symptom-card:hover { border-left-color: #c44569; transform: translateX(5px); }
+        .symptom-card h4 { color: #ff6b9d; margin-bottom: 0.5rem; font-size: 1.3rem; }
+        .dashboard { display: none; background: #fff5f8; }
+        .dashboard.active { display: block; }
+        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
+        .dashboard-card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(255,107,157,0.15); }
+        .dashboard-value { font-size: 2.5rem; font-weight: bold; color: #c44569; margin: 0.5rem 0; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 2000; align-items: center; justify-content: center; padding: 2rem; }
+        .modal.active { display: flex; }
+        .modal-content { background: white; padding: 3rem; border-radius: 20px; max-width: 500px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative; }
+        .close-modal { position: absolute; top: 1rem; right: 1rem; font-size: 2rem; cursor: pointer; background: none; border: none; color: #666; }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; color: #ff6b9d; font-weight: bold; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 1rem; border: 2px solid #ffcce0; border-radius: 10px; font-size: 1rem; transition: all 0.3s; }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: #ff6b9d; }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+        .alert { padding: 1rem; border-radius: 10px; margin-bottom: 1rem; display: none; }
+        .alert.show { display: block; }
+        .alert-success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .alert-error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        footer { background: #2d3748; color: white; padding: 3rem 2rem; text-align: center; }
+        .hidden { display: none; }
+        .db-section { background: #fff5f8; padding: 3rem 2rem; }
+        .db-container { max-width: 1200px; margin: 0 auto; }
+        .db-table { background: white; border-radius: 15px; padding: 2rem; box-shadow: 0 5px 20px rgba(255,107,157,0.15); overflow-x: auto; margin-bottom: 2rem; }
+        .db-table h3 { color: #c44569; margin-bottom: 1.5rem; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 1rem; text-align: left; border-bottom: 1px solid #ffcce0; }
+        th { background: #fff5f8; color: #c44569; font-weight: bold; }
+        tr:hover { background: #fff5f8; }
+        .btn-small { padding: 0.5rem 1rem; font-size: 0.9rem; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">🌸 Aarogyashree</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#symptoms">Symptoms</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="user-menu" id="userMenu">
+                <div class="user-avatar" id="userAvatar"></div>
+                <button class="btn btn-secondary" onclick="showDashboard()" style="padding: 0.5rem 1rem;">Dashboard</button>
+                <button class="btn btn-secondary" onclick="showDatabase()" style="padding: 0.5rem 1rem;">Database</button>
+                <button class="btn btn-secondary" onclick="logout()" style="padding: 0.5rem 1rem;">Logout</button>
+            </div>
+            <div class="auth-btns" id="authButtons">
+                <button class="btn btn-primary" onclick="openModal('loginModal')" style="padding: 0.5rem 1.5rem;">Login</button>
+                <button class="btn btn-secondary" onclick="openModal('registerModal')" style="padding: 0.5rem 1.5rem;">Sign Up</button>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Take Control of Your Health</h1>
+        <p>Comprehensive PCOD & PCOS Solutions for Every Woman</p>
+        <div class="cta-btns">
+            <button class="btn btn-primary" onclick="openModal('registerModal')">Start Your Journey</button>
+            <button class="btn btn-secondary" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">Learn More</button>
+        </div>
+    </section>
+
+    <section id="dashboard" class="dashboard container">
+        <h2 class="section-title">Your Health Dashboard</h2>
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <h4>📊 Health Entries</h4>
+                <div class="dashboard-value" id="entriesCount">0</div>
+                <div>Last 30 days</div>
+            </div>
+            <div class="dashboard-card">
+                <h4>💧 Avg Water Intake</h4>
+                <div class="dashboard-value" id="avgWater">0</div>
+                <div>glasses per day</div>
+            </div>
+            <div class="dashboard-card">
+                <h4>😴 Avg Sleep</h4>
+                <div class="dashboard-value" id="avgSleep">0</div>
+                <div>hours per night</div>
+            </div>
+            <div class="dashboard-card">
+                <h4>⚡ Avg Energy</h4>
+                <div class="dashboard-value" id="avgEnergy">0</div>
+                <div>out of 10</div>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <button class="btn btn-primary" onclick="openModal('healthModal')">Log Today's Health Data</button>
+        </div>
+    </section>
+
+    <section id="database" class="db-section hidden">
+        <div class="db-container">
+            <h2 class="section-title">Database Management</h2>
+            <p class="section-subtitle">View all stored data</p>
+            
+            <div class="db-table">
+                <h3>👥 Users Table</h3>
+                <table id="usersTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Registered</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTableBody"></tbody>
+                </table>
+            </div>
+
+            <div class="db-table">
+                <h3>🏥 Health Tracking Data</h3>
+                <table id="healthTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>User</th>
+                            <th>Date</th>
+                            <th>Weight</th>
+                            <th>Water</th>
+                            <th>Sleep</th>
+                            <th>Energy</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="healthTableBody"></tbody>
+                </table>
+            </div>
+
+            <div class="db-table">
+                <h3>📧 Contact Messages</h3>
+                <table id="contactTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Message</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contactTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item"><h3>1 in 10</h3><p>Women affected by PCOS</p></div>
+            <div class="stat-item"><h3>90%+</h3><p>See improvement with lifestyle changes</p></div>
+            <div class="stat-item"><h3>5000+</h3><p>Women we've helped</p></div>
+            <div class="stat-item"><h3>24/7</h3><p>Support available</p></div>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <h2 class="section-title">Why Choose Aarogyashree?</h2>
+        <div class="grid">
+            <div class="card"><div class="card-icon">👩‍⚕️</div><h3>Expert Guidance</h3><p>Certified specialists in hormonal health</p></div>
+            <div class="card"><div class="card-icon">🎯</div><h3>Personalized Plans</h3><p>Customized diet and exercise programs</p></div>
+            <div class="card"><div class="card-icon">📱</div><h3>Easy Tracking</h3><p>Monitor symptoms and progress</p></div>
+            <div class="card"><div class="card-icon">🤝</div><h3>Community Support</h3><p>Connect with thousands of women</p></div>
+        </div>
+    </section>
+
+    <section id="symptoms" class="symptoms container">
+        <h2 class="section-title">Recognizing the Signs</h2>
+        <div class="grid">
+            <div class="symptom-card"><h4>🔄 Irregular Cycles</h4><p>Infrequent or prolonged periods</p></div>
+            <div class="symptom-card"><h4>⚖️ Weight Issues</h4><p>Difficulty losing weight</p></div>
+            <div class="symptom-card"><h4>💇‍♀️ Hair Growth</h4><p>Unwanted facial and body hair</p></div>
+            <div class="symptom-card"><h4>🌟 Skin Problems</h4><p>Acne and dark patches</p></div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h2 class="section-title">Get Started Today</h2>
+        <div style="max-width: 600px; margin: 0 auto;">
+            <div id="contactAlert" class="alert"></div>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Aarogyashree. All rights reserved.</p>
+    </footer>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('loginModal')">&times;</button>
+            <h3 style="color: #c44569;">Welcome Back</h3>
+            <div id="loginAlert" class="alert"></div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('registerModal')">&times;</button>
+            <h3 style="color: #c44569;">Create Account</h3>
+            <div id="registerAlert" class="alert"></div>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="regName" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="regEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="regPassword" required minlength="6">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+            </form>
+        </div>
+>>>>>>> e621a12a49c48da193d7fcf3c7a5ab5262a9a5dd
     </div>
   </nav>
 </header>
 
+<<<<<<< HEAD
 <!-- ═══════════════════════════════════
      PAGE: HOME
 ════════════════════════════════════ -->
@@ -404,6 +698,33 @@ footer p+p{margin-top:.45rem;font-size:.78rem;opacity:.5}
         <button class="btn btn-p btn-lg" onclick="openM('registerModal')">Start Your Journey Free</button>
         <button class="btn btn-lg" style="color:#fff;border:2px solid rgba(255,255,255,.4);background:transparent" onclick="goTo('why')">Explore Features</button>
       </div>
+=======
+    <div id="healthModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('healthModal')">&times;</button>
+            <h3 style="color: #c44569;">Log Health Data</h3>
+            <div id="healthAlert" class="alert"></div>
+            <form id="healthForm">
+                <div class="form-group">
+                    <label>Weight (kg)</label>
+                    <input type="number" id="weight" step="0.1">
+                </div>
+                <div class="form-group">
+                    <label>Water Intake (glasses)</label>
+                    <input type="number" id="water" min="0">
+                </div>
+                <div class="form-group">
+                    <label>Sleep Hours</label>
+                    <input type="number" id="sleep" step="0.5" min="0" max="24">
+                </div>
+                <div class="form-group">
+                    <label>Energy Level (0-10)</label>
+                    <input type="number" id="energy" min="0" max="10">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Save Data</button>
+            </form>
+        </div>
+>>>>>>> e621a12a49c48da193d7fcf3c7a5ab5262a9a5dd
     </div>
     <div class="hero-floor"></div>
   </section>
@@ -435,6 +756,7 @@ footer p+p{margin-top:.45rem;font-size:.78rem;opacity:.5}
   </section>
 </div>
 
+<<<<<<< HEAD
 <!-- ═══════════════════════════════════
      PAGE: WHY US
 ════════════════════════════════════ -->
@@ -1378,3 +1700,230 @@ async function sendChat(){
     const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,tools:[{type:'web_search_20250305',name:'web_search'}],system:'You are Aarogy AI, a warm PCOS/PCOD health assistant for Aarogyashree, serving Indian women. Keep responses concise (3–5 sentences), warm, and practical. Respond in the same language as the user. Focus on PCOD/PCOS symptoms, diet, exercise, hormones, fertility, Ayurveda. Remind users to consult doctors for medical decisions. Use relevant emojis.',messages:chatHist})});
     const data=await res.json();
     const reply=data.content?.fi
+=======
+    <script>
+        // Database
+        const DB = {
+            users: JSON.parse(localStorage.getItem('users') || '[]'),
+            healthData: JSON.parse(localStorage.getItem('healthData') || '[]'),
+            contacts: JSON.parse(localStorage.getItem('contacts') || '[]')
+        };
+
+        let currentUser = null;
+
+        function saveDB() {
+            localStorage.setItem('users', JSON.stringify(DB.users));
+            localStorage.setItem('healthData', JSON.stringify(DB.healthData));
+            localStorage.setItem('contacts', JSON.stringify(DB.contacts));
+        }
+
+        function openModal(id) { document.getElementById(id).classList.add('active'); }
+        function closeModal(id) { document.getElementById(id).classList.remove('active'); }
+        
+        function showAlert(id, msg, type) {
+            const el = document.getElementById(id);
+            el.className = `alert ${type === 'success' ? 'alert-success' : 'alert-error'} show`;
+            el.textContent = msg;
+            setTimeout(() => el.classList.remove('show'), 5000);
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            const user = DB.users.find(u => u.email === email && u.password === password);
+            
+            if (user) {
+                currentUser = user;
+                showAlert('loginAlert', 'Login successful!', 'success');
+                setTimeout(() => {
+                    closeModal('loginModal');
+                    document.getElementById('authButtons').classList.add('hidden');
+                    document.getElementById('userMenu').classList.add('active');
+                    document.getElementById('userAvatar').textContent = user.name[0].toUpperCase();
+                    updateDashboard();
+                }, 1000);
+            } else {
+                showAlert('loginAlert', 'Invalid email or password', 'error');
+            }
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('regName').value;
+            const email = document.getElementById('regEmail').value;
+            const password = document.getElementById('regPassword').value;
+            
+            if (DB.users.find(u => u.email === email)) {
+                showAlert('registerAlert', 'Email already registered', 'error');
+                return;
+            }
+
+            const newUser = {
+                id: Date.now(),
+                name,
+                email,
+                password,
+                registeredAt: new Date().toISOString()
+            };
+            
+            DB.users.push(newUser);
+            saveDB();
+            currentUser = newUser;
+            
+            showAlert('registerAlert', 'Account created successfully!', 'success');
+            setTimeout(() => {
+                closeModal('registerModal');
+                document.getElementById('authButtons').classList.add('hidden');
+                document.getElementById('userMenu').classList.add('active');
+                document.getElementById('userAvatar').textContent = name[0].toUpperCase();
+            }, 1000);
+        });
+
+        document.getElementById('healthForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (!currentUser) return;
+
+            const data = {
+                id: Date.now(),
+                userId: currentUser.id,
+                userName: currentUser.name,
+                date: new Date().toISOString(),
+                weight: parseFloat(document.getElementById('weight').value) || 0,
+                water: parseInt(document.getElementById('water').value) || 0,
+                sleep: parseFloat(document.getElementById('sleep').value) || 0,
+                energy: parseInt(document.getElementById('energy').value) || 0
+            };
+            
+            DB.healthData.push(data);
+            saveDB();
+            updateDashboard();
+            showAlert('healthAlert', 'Data saved successfully!', 'success');
+            document.getElementById('healthForm').reset();
+            setTimeout(() => closeModal('healthModal'), 1500);
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const contact = {
+                id: Date.now(),
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value,
+                date: new Date().toISOString()
+            };
+            
+            DB.contacts.push(contact);
+            saveDB();
+            showAlert('contactAlert', 'Thank you! We\'ll get back to you within 24 hours.', 'success');
+            document.getElementById('contactForm').reset();
+        });
+
+        function showDashboard() {
+            document.getElementById('home').classList.add('hidden');
+            document.getElementById('database').classList.add('hidden');
+            document.getElementById('dashboard').classList.add('active');
+            document.getElementById('dashboard').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showDatabase() {
+            document.getElementById('home').classList.add('hidden');
+            document.getElementById('dashboard').classList.remove('active');
+            document.getElementById('database').classList.remove('hidden');
+            renderDatabase();
+            document.getElementById('database').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function logout() {
+            currentUser = null;
+            document.getElementById('authButtons').classList.remove('hidden');
+            document.getElementById('userMenu').classList.remove('active');
+            document.getElementById('dashboard').classList.remove('active');
+            document.getElementById('database').classList.add('hidden');
+            document.getElementById('home').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function updateDashboard() {
+            if (!currentUser) return;
+            const userData = DB.healthData.filter(d => d.userId === currentUser.id).slice(-30);
+            
+            document.getElementById('entriesCount').textContent = userData.length;
+            if (userData.length > 0) {
+                document.getElementById('avgWater').textContent = (userData.reduce((a, b) => a + b.water, 0) / userData.length).toFixed(1);
+                document.getElementById('avgSleep').textContent = (userData.reduce((a, b) => a + b.sleep, 0) / userData.length).toFixed(1);
+                document.getElementById('avgEnergy').textContent = (userData.reduce((a, b) => a + b.energy, 0) / userData.length).toFixed(1);
+            }
+        }
+
+        function renderDatabase() {
+            // Users table
+            const usersBody = document.getElementById('usersTableBody');
+            usersBody.innerHTML = DB.users.map(u => `
+                <tr>
+                    <td>${u.id}</td>
+                    <td>${u.name}</td>
+                    <td>${u.email}</td>
+                    <td>${new Date(u.registeredAt).toLocaleDateString()}</td>
+                    <td><button class="btn btn-secondary btn-small" onclick="deleteUser(${u.id})">Delete</button></td>
+                </tr>
+            `).join('');
+
+            // Health data table
+            const healthBody = document.getElementById('healthTableBody');
+            healthBody.innerHTML = DB.healthData.map(h => `
+                <tr>
+                    <td>${h.id}</td>
+                    <td>${h.userName}</td>
+                    <td>${new Date(h.date).toLocaleDateString()}</td>
+                    <td>${h.weight} kg</td>
+                    <td>${h.water}</td>
+                    <td>${h.sleep}h</td>
+                    <td>${h.energy}/10</td>
+                    <td><button class="btn btn-secondary btn-small" onclick="deleteHealth(${h.id})">Delete</button></td>
+                </tr>
+            `).join('');
+
+            // Contact table
+            const contactBody = document.getElementById('contactTableBody');
+            contactBody.innerHTML = DB.contacts.map(c => `
+                <tr>
+                    <td>${c.id}</td>
+                    <td>${c.name}</td>
+                    <td>${c.email}</td>
+                    <td>${c.message.substring(0, 50)}...</td>
+                    <td>${new Date(c.date).toLocaleDateString()}</td>
+                    <td><button class="btn btn-secondary btn-small" onclick="deleteContact(${c.id})">Delete</button></td>
+                </tr>
+            `).join('');
+        }
+
+        function deleteUser(id) {
+            if (confirm('Delete this user?')) {
+                DB.users = DB.users.filter(u => u.id !== id);
+                DB.healthData = DB.healthData.filter(h => h.userId !== id);
+                saveDB();
+                renderDatabase();
+            }
+        }
+
+        function deleteHealth(id) {
+            if (confirm('Delete this health entry?')) {
+                DB.healthData = DB.healthData.filter(h => h.id !== id);
+                saveDB();
+                renderDatabase();
+                updateDashboard();
+            }
+        }
+
+        function deleteContact(id) {
+            if (confirm('Delete this contact message?')) {
+                DB.contacts = DB.contacts.filter(c => c.id !== id);
+                saveDB();
+                renderDatabase();
+            }
+        }
+    </script>
+</body>
+</html>
+>>>>>>> e621a12a49c48da193d7fcf3c7a5ab5262a9a5dd
